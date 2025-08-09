@@ -1,2 +1,8 @@
 server:
   port: 8080
+
+spring:
+  r2dbc:
+    url: r2dbc:pool:postgres://localhost:5432/todo_db
+    username: postgres
+    password: 418413
