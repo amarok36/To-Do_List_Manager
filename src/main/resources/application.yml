@@ -6,3 +6,8 @@ spring:
     url: r2dbc:pool:postgres://localhost:5432/todo_db
     username: postgres
     password: 418413
+  flyway:
+    url: jdbc:postgresql://localhost:5432/todo_db?currentSchema=public&user=postgres&password=418413
+    locations: classpath:db/migration
+
+
