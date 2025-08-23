@@ -1,13 +1,12 @@
 package com.todo.todolist.repository;
 
-import com.todo.todolist.entity.Priority;
 import com.todo.todolist.entity.Task;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.r2dbc.repository.R2dbcRepository;
+import reactor.core.publisher.Flux;
 
-import java.util.List;
-
-public interface TaskRepository extends JpaRepository<Task, Long> {
-    List<Task> findByCategory(String category);
-    List<Task> findByPriority(String priority);
-    List<Task> findByCompleted(boolean completed);
+public interface TaskRepository extends R2dbcRepository<Task, Long> {
+    Flux<Task> findByCategory(String category);
+    Flux<Task> findByPriority(String priority);
+    Flux<Task> findByCompleted(Boolean completed);
 }
+
